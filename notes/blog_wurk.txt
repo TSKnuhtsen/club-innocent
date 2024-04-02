@@ -1,0 +1,12 @@
+####AUTHOR: Thyge Sullivan Knuhtsen
+####DATE: 11.6.2023
+####TITLE: Blog stepthrough
+
+1.) Standup and place .parquet file in S3 bucket via AWS S3 CLI
+2.) Standup Redshift Serverless and create two tables (STAGING + PRODUCTION) via CloudFormation
+3.) Containerize and deploy python + psychopg2 as AWS Fargate via CloudFormation
+3.) Trigger python + pyschopg2 fargate to COPY S3 .parquet to Redshift Serverless - Namespace: STAGING
+4.) Push STAGING to PRODUCTION via AWS Redshift CLI
+5.) Select schemas, tables and views and cut Redshift Data Share via AWS Redshift CLI
+	- https://docs.aws.amazon.com/redshift/latest/dg/adx-getting-started-producer.html
+	- Please ensure datashare is managed by ADX - CREATE DATASHARE salesshare MANAGEDBY ADX;
